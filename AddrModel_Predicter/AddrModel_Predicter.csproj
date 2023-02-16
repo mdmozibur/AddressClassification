@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="2.0.1" />
+    <PackageReference Include="Microsoft.ML.FastTree" Version="2.0.1" />
+  </ItemGroup>
+  <ItemGroup Label="AddressClassifier">
+    <None Include="AddressClassifier.consumption.cs">
+      <DependentUpon>AddressClassifier.mbconfig</DependentUpon>
+    </None>
+    <None Include="AddressClassifier.training.cs">
+      <DependentUpon>AddressClassifier.mbconfig</DependentUpon>
+    </None>
+    <None Include="AddressClassifier.zip">
+      <DependentUpon>AddressClassifier.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
